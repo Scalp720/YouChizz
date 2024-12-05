@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>YouChizz</title>
+</head>
+
+<body>
+    <header>
+        <div class="Logo">
+            <a href="index.html"><img src="logo.png" alt="YouChizz logo"></a>
+        </div>
+        <div class="searchbar">
+            <input type="text" id="searchInput" placeholder="What do you desire...">
+            <button id="searchButton">Search</button>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="search-and-filters">
+            <!-- Search Result Heading -->
+            <div class="searching-result">
+                <div class="search">
+                    <h2>Search Result</h2>
+                </div>
+
+                <!-- Filters Section -->
+                <div class="filters">
+                    <!-- Genre Filter -->
+                    <div>
+                        <label for="genreFilter">Genre:</label>
+                        <select id="genreFilter">
+                            <option value="">All Genres</option>
+                            <option value="28">Action</option>
+                            <option value="12">Adventure</option>
+                            <option value="16">Animation</option>
+                            <option value="35">Comedy</option>
+                        </select>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div>
+                        <label for="ratingFilter">Rating:</label>
+                        <select id="ratingFilter">
+                            <option value="">All Ratings</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                            <option value="6">6+</option>
+                            <option value="7">7+</option>
+                            <option value="8">8+</option>
+                            <option value="9">9+</option>
+                        </select>
+                    </div>
+
+                    <!-- Year Filter -->
+                    <div>
+                        <label for="yearFilter">Year:</label>
+                        <select id="yearFilter">
+                            <option value="">All Years</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Movie Results Section -->
+            <div class="results">
+                <div class="movie-grid" id="movie-grid">
+                    <!-- Movie cards will be dynamically injected here -->
+                </div>
+            
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button id="prev">Prev</button>
+                    <div class="page-numbers" id="page-numbers">
+                        <!-- Pagination buttons will be dynamically added -->
+                    </div>
+                    <button id="next">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

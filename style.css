@@ -1,0 +1,304 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1E1E1E;
+    color: #FFF;
+    max-width: 100%;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Logo img {
+    width: 200px;
+    height: 100px;
+    margin: 0.5rem;
+    margin-right: 2rem;
+}
+
+/* Search Bar */
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar input {
+    width: 700px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.searchbar input::placeholder {
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.searchbar button {
+    margin-left: 10px;
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    border-radius: 8px;
+    background: #EFBD32;
+    color: #000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.searchbar button:hover {
+    background: #d6a429;
+}
+
+/* Main Content */
+.main-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    text-align: left;
+    padding: 1rem 0;
+}
+
+.main-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Filters Section */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: center;
+}
+
+.filters select, 
+.filters button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: #2a2a2a;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.filters select:hover,
+.filters button:hover {
+    background-color: #444;
+}
+
+.filters button {
+    background-color: #EFBD32;
+    color: #000;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #d6a429;
+}
+
+/* Custom Dropdown Styles */
+.select {
+    width: fit-content;
+    position: relative;
+    transition: 300ms;
+    margin: 5px;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.selected {
+    background-color: #2a2f3b;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    margin-left: 10px;
+    height: 10px;
+    transform: rotate(-90deg);
+    width: 25px;
+    fill: white;
+    transition: 300ms;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #2a2f3b;
+    position: absolute;
+    top: calc(100% + 5px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.select:hover > .options {
+    opacity: 1;
+    visibility: visible;
+}
+
+.select:hover > .selected .arrow {
+    transform: rotate(0deg);
+}
+
+.option {
+    border-radius: 5px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #2a2f3b;
+    width: 150px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #323741;
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options label {
+    display: inline-block;
+}
+
+.options label::before {
+    content: attr(data-txt);
+}
+
+/* Movie Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.movie-card {
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #444;
+}
+
+.movie-card h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
+    color: #fff;
+}
+
+.movie-card p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    color: #bbb;
+}
+
+/* Pagination Section */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 0.5rem;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 2px;
+    transition: background 0.3s ease;
+}
+
+.pagination button:hover {
+    background: #EFBD32;
+    color: #000;
+}
+
+.pagination button.active {
+    background: #EFBD32;
+    color: #000;
+}
+
+.pagination .page-numbers button {
+    border: 1px solid #444;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .searchbar input {
+        width: 90%;
+    }
+
+    .movie-card {
+        width: 100%;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
